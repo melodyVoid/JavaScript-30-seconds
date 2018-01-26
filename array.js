@@ -33,3 +33,11 @@ const chunk = (arr, size) => {
 const chunk2 = (arr, size) => Array.from({length: Math.ceil(arr.length / size)}, (v, i) => arr.slice(i * size, i * size + size))
 
 console.log(chunk2([1, 2, 3, 4, 5], 2))
+
+// 6.compact 去除数组中的 falsey 元素
+const compact = arr => arr.filter(Boolean)
+console.log(compact([0, 1, false, 2, "", 3, "a", "e" * 23, NaN, "s", 34]))
+
+// 7.countOccurrences 统计一个元素在一个数组中出现的次数
+const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 1 : a, 0)
+console.log(countOccurrences([1,1,2,1,2,3], 1))  // 3
